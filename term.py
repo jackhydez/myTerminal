@@ -6,7 +6,7 @@ join = False
 os.system("clear")
 os.system('ifconfig | grep "inet"')
 
-host = "XXX.XXX.XX.X"
+host = "XXX.XXX.XX.XX"
 port = 0
 
 print("Change IP address?")
@@ -25,7 +25,7 @@ alias = input("NameWord: ")
 
 while shutdown == False:
     if join == False:
-        s.sendto(("[" + alias + "] => join chat").encode("utf-8"), server)
+        s.sendto(("[" + alias + "] => ").encode("utf-8"), server)
         join = True
     else:
         try:
@@ -36,7 +36,7 @@ while shutdown == False:
                 print(data.decode("utf-8"))
 
         except:
-            s.sendto(("[" + alias + "] <= left chat").encode("utf-8"), server)
+            s.sendto(("[" + alias + "] <= ").encode("utf-8"), server)
             shutdown = True
 
 s.close()
